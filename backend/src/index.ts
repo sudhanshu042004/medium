@@ -13,7 +13,7 @@ app.use(cors())
 
 app.get('/', (c) => {
   return c.json({
-    msg : "this is blog app"
+    msg : "You are successfully connected to blog app"
   })
 })
 

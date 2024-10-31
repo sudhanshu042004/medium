@@ -36,7 +36,7 @@ SignUp.post("/", async (c) => {
     return c.json({token}) } catch (e) {
         c.status(403);
         return c.json({
-            message : "account already exists"
+            message : "error while creating database"
         })
     }
 })

@@ -9,7 +9,7 @@ const SignIn = new Hono<{
 }>();
 
 SignIn.post('/', async (c) => {
-    const prisma = c.get("prisma");
+    const prisma : any = c.get("prisma");
     const body = await c.req.json();
     try {
         console.log(body)
@@ -23,6 +23,7 @@ SignIn.post('/', async (c) => {
             }
         })
         if(hash != user.password){
+            c.status(404);
             return c.json({
                 message : "Invalid Password"
             })
